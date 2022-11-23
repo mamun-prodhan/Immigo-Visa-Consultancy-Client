@@ -8,8 +8,8 @@ const CountryCard = ({contry}) => {
             <div className="card-body">
                 <h2 className="card-title">{title}</h2>
                 <p>{description}</p>
-                <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Watch</button>
+                <div className="card-actions justify-start">
+                    <button className="btn btn-primary">Read More</button>
                 </div>
             </div>
         </div>

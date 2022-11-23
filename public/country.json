@@ -1,0 +1,27 @@
+[
+    {
+        "_id": "01",
+        "title": "United States",
+        "img": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png",
+        "description": "The U.S. is a country of 50 states covering a vast swath of North America."
+    },
+    {
+        "_id": "02",
+        "title": "United Kingdom",
+        "img": "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/1200px-Flag_of_the_United_Kingdom.svg.png",
+        "description": "The United Kingdom, made up of England, Scotland, Wales and Northern Ireland."
+    },
+    {
+        "_id": "03",
+        "title": "Australia",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg",
+        "description": "Australia, officially the Commonwealth of Australia, is a sovereign country."
+    },
+    {
+        "_id": "04",
+        "title": "Canada",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/1200px-Flag_of_Canada_%28Pantone%29.svg.png",
+        "description": "Canada is a country in North America. Its ten provinces and three territories."
+    }
+    
+]

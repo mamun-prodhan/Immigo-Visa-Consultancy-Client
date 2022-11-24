@@ -1,25 +1,45 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import img2 from '../../assets/login/login.png'
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const SignUp = () => {
+    const [error, setError] = useState('');
+    const { createUser, updateUserProfile } = useContext(AuthContext);
 
-    const {createUser} = useContext(AuthContext);
-
-    const handleSignUp = event =>{
+    const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
+        const name = form.name.value;
+        const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
+        console.log(name, photoURL, email, password);
 
         createUser(email, password)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-        })
-        .catch(err => console.error(err));
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+                handleUpdateUserProfile(name, photoURL);
+            })
+            .catch(err => {
+                console.error(err);
+                setError(err.message);
+            });
+    }
 
+    const handleUpdateUserProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(err => {
+                console.error(err);
+                setError(err.message);
+            })
     }
 
     return (
@@ -35,7 +55,13 @@ const SignUp = () => {
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="text" name='name' placeholder="Your Name" className="input input-bordered" />
+                            <input type="text" name='name' placeholder="Your Name" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Photo URL</span>
+                            </label>
+                            <input type="text" name='photoURL' placeholder="Photo URL" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -50,6 +76,7 @@ const SignUp = () => {
                             <input type="text" name='password' placeholder="password" className="input input-bordered" required />
                         </div>
                         <div className="form-control mt-6">
+                            <p>{error}</p>
                             <input className="btn btn-primary" type="submit" value="Sign Up" />
                         </div>
                     </form>

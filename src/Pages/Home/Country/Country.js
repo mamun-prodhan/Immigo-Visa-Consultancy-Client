@@ -4,7 +4,7 @@ import CountryCard from './CountryCard';
 const Country = () => {
     const [country, setCountry] = useState([]);
     useEffect( ()=>{
-        fetch('country.json')
+        fetch('http://localhost:5000/country')
         .then(res => res.json())
         .then(data => setCountry(data))
     }, [])

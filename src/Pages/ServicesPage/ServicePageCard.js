@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ServiceCard = ({service}) => {
-    const {_id, img, price, title, description} = service;
+const ServicePageCard = ({ service }) => {
+    const { _id, img, price, title, description } = service;
     return (
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
             <figure><img src={img} alt="Shoes" /></figure>
@@ -11,10 +11,10 @@ const ServiceCard = ({service}) => {
                 <p className='text-2xl text-orange-600 font-bold'>Price: ${price}</p>
                 <p className='text-justify'>
                     {description.length > 100 ?
-                    <>{description.slice(0, 100) + ' ...'}</>
-                    :
-                    description
-                }
+                        <>{description.slice(0, 100) + ' ...'}</>
+                        :
+                        description
+                    }
                 </p>
                 <div className="card-actions justify-start">
                     <Link to={`/details/${_id}`}>
@@ -26,4 +26,4 @@ const ServiceCard = ({service}) => {
     );
 };
 
-export default ServiceCard;
+export default ServicePageCard;

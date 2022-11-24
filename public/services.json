@@ -1,41 +1,35 @@
 [
     {
-        "_id": "01",
         "title": "Education Visa",
         "img": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80",
         "price": "200.00",
         "description": "F-1 Visa, This is the most common type of student visa. If you wish to engage in academic studies in the United States at an approved school, such as an accredited U.S. college or university, private secondary school, or approved English language program then you need an F-1 visa. You will also need an F-1 visa if your course of study is more than 18 hours a week. M-1 Visa, If you plan engage in non-academic or vocational study or training at a U.S. institution then you need an M-1 visa. The United States welcomes foreign citizens who come to the United States to study. Before applying for a visa, all student visa applicants must be accepted by a school or program. Once accepted, educational institutions will provide each applicant the necessary approval documentation to be submitted when applying for a student visa."
     },
     {
-        "_id": "02",
         "title": "Business Visa",
         "img": "https://images.unsplash.com/photo-1572021335469-31706a17aaef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
         "price": "300.00",
         "description": "Work permits and business visas serve distinct purposes for international travelers. Employers can send employees to different countries for various corporate activities, including attending conferences, training, networking and work projects. Work permits and business visas both grant foreign nationals legal entry into a foreign country to conduct activities, but the two have distinct purposes. Business visas generally only allow holders to participate in tasks that are not considered work or gainful employment, while work permits grant holders the ability to perform services that would be considered productive work in the host location. Government authorities issue business visas to travelers who intend to conduct permissible business activities and attend meetings that do not constitute labor or employment in a specific country."
     },
     {
-        "_id": "03",
         "title": "Work Visa",
         "img": "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         "price": "100.00",
         "description": "A visa is an official stamp in your passport authorizing you to travel, work, or study in that country for a specified length of time. All countries, including the US, require a work permit visa for foreign workers; employers will not hire you without one. For select countries, short-term work permit visas are available by application. In other cases, such as for long-term employment, foreign employers will need to apply for the visa on your behalf. Student work exchange programs can legally assist students in obtaining a short-term work permit visa. Unpaid internships and volunteer positions may or may not require a work permit, depending on the host country's regulations. Its always safe to assume that youll need a visa, especially if youll be traveling for a purpose other than tourism. Check out the visa requirements for specific countries by checking with the embassy or consulate of the country you will be visiting."
     },
     {
-        "_id": "04",
         "title": "Family Visa",
         "img": "https://images.unsplash.com/photo-1517554558809-9b4971b38f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         "price": "150.00",
         "description": "People who have a close family member—usually a partner— living and working in a foreign country can apply for a family reunification visa. Family visas are usually long-term, and the qualification requirements can change based on which family member is sponsoring you. A family visa is a document issued for family reunification purposes in a foreign country. Usually, to qualify for a family visa, you need to have a family member, i.e., a spouse/partner, parent, sibling, or child who is settled in a foreign country and you want to join them. Family-based visas (FB) are an immigrant visa category where a U.S. citizen or Lawful Permanent Resident (LPR) petitions for a relative to grant them permission to immigrate to the United States. The visa process varies depending on the relationship of the family member and whether the petitioning relative is a United States citizen or a Lawful Permanent Resident, and must be started by the petitioner. Petitioners must be at least 21 years of age and must be either a United States Citizen or a Lawful Permanent Resident to petition another individual."
     },
     {
-        "_id": "05",
         "title": "Tourist Visa",
         "img": "https://images.unsplash.com/photo-1661619101612-e59a7b30ef9e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         "price": "399.00",
         "description": "Generally, a citizen of a foreign country who wishes to enter the United States must first obtain a visa, either a nonimmigrant visa for a temporary stay, or an immigrant visa for permanent residence. Visitor visas are nonimmigrant visas for persons who want to enter the United States temporarily for business (visa category B-1), for tourism (visa category B-2), or for a combination of both purposes (B-1/B-2). Tourism is an integral part of economic development across the world. However, most people traveling to foreign countries need to apply for a tourist visa. Tourist visas are official travel documents issued to foreign visitors for leisure purposes. For example, if you are from India and want to visit the US, you need to apply for a tourist visa. Every country regulates its visa policy for tourists, and their corresponding embassies and consulates will help you obtain a visa for short-term visits. To have your application processed, you need to pay the required visa fee— the amount of which varies depending on your destination. Some embassies require you to pay the fee before attending the visa interview, while others may ask to pay the same day."
     },
     {
-        "_id": "06",
         "title": "Transit Visa",
         "img": "https://images.unsplash.com/photo-1493235818145-77224bfd6e5c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         "price": "110.00",

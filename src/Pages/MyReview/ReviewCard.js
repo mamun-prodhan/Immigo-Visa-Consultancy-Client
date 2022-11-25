@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ReviewCard = ({myreview}) => {
+const ReviewCard = ({myreview, handleDelete}) => {
     const {_id, service, serviceName, price, customer, photoURL, email, review} = myreview;
+
+    
+
     return (
         <div className="card card-compact w-96 bg-base-100 shadow-xl my-4 py-3">
             <div className="card-body">
@@ -14,7 +17,7 @@ const ReviewCard = ({myreview}) => {
                 </p>
                 <div className="card-actions justify-evenly mt-2">
                     
-                        <button className="btn btn-primary">Delete</button>
+                        <button onClick={()=>handleDelete(_id)} className="btn btn-primary">Delete</button>
                         <button className="btn btn-primary ml-3">Update</button>
                     
                 </div>

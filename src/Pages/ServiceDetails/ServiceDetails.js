@@ -5,7 +5,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import Reviews from '../Reviews/Reviews';
 
 const ServiceDetails = () => {
-    const { _id, title, price } = useLoaderData();
+    const { _id, title, price, img, description } = useLoaderData();
     const { user } = useContext(AuthContext);
 
 
@@ -58,8 +58,16 @@ const ServiceDetails = () => {
     return (
         <div>
             {/* service details section */}
-            <div>
-                <h2>{title}</h2>
+            <div className="hero bg-base-200 rounded-xl">
+                <div className="hero-content text-center">
+                    <div className="">
+                        <img className='rounded-xl  mx-auto' src={img} alt="" />
+                        <h1 className="text-5xl font-bold mt-5">Service Name: {title}</h1>
+                        <p className='text-3xl font-bold mt-5 text-orange-600'>Price: {price}</p>
+                        <p className="py-6 text-justify">{description}</p>
+                        <button className="btn btn-primary mb-3">Consult Now</button>
+                    </div>
+                </div>
             </div>
 
 
@@ -83,12 +91,12 @@ const ServiceDetails = () => {
                                 </div>
                                 <form onSubmit={handleReview} className='bg-base-100 shadow-xl w-1/2 mx-auto p-5 rounded-xl'>
                                     <label className='font-bold' htmlFor="name">Name</label><br />
-                                    <input name="name" type="text" placeholder="Your Name" defaultValue={user?.displayName} className="mb-5 input input-bordered input-success w-full max-w-xs" /> <br />
+                                    <input name="name" type="text" placeholder="Your Name" defaultValue={user?.displayName} className="mb-5 input input-bordered input-success w-full max-w-xs" required/> <br />
                                     <label className='font-bold' htmlFor="photoURL">photoURL</label><br />
-                                    <input name="photoURL" type="text" placeholder="photoURL" defaultValue={user?.photoURL} className="mb-5 input input-bordered input-success w-full max-w-xs" /> <br />
+                                    <input name="photoURL" type="text" placeholder="photoURL" defaultValue={user?.photoURL} className="mb-5 input input-bordered input-success w-full max-w-xs" required /> <br />
                                     <label className='font-bold' htmlFor="email">Email</label><br />
                                     <input name="email" type="text" placeholder="Your Email" defaultValue={user?.email} className="mb-5 input input-bordered input-success w-full max-w-xs" readOnly /> <br />
-                                    <textarea name="review" className="textarea textarea-success" placeholder="Write Review"></textarea> <br />
+                                    <textarea name="review" className="textarea textarea-success" placeholder="Write Review" required></textarea> <br />
                                     <input className='btn my-4' type="submit" value="Add Review" />
                                 </form>
                             </div>
@@ -96,17 +104,17 @@ const ServiceDetails = () => {
                     </>
                     :
                     <>
-                        <p className='text-4xl'>Please Login to add a review</p>
+                        <p className='text-4xl font-bold text-center'>Please Login to add a review</p>
                     </>
             }
             {/* all review section start */}
-            <div>
+            <div className='mt-10 mb-20 bg-base-100 shadow-xl p-5 rounded-xl'>
                 {
                     allReview.length === 0 ?
-                        <p className='text-4xl'>Please add a Review</p>
+                        <p className='text-4xl font-bold text-center'>No Reviews Are Added, Please add a Review</p>
                         :
                         <>
-                            <p className='text-4xl'>You have : {allReview.length} Reviews</p>
+                            <p className='text-4xl font-bold my-5 text-center text-orange-600'>{title} : {allReview.length} Reviews</p>
 
                             <div className="overflow-x-auto w-full">
                                 <table className="table w-full">
@@ -114,7 +122,7 @@ const ServiceDetails = () => {
                                     <thead>
                                         <tr>
                                             <th>Customer Info</th>
-                                            <th>Services</th>
+                                            <th>Service Name</th>
                                             <th>Reviews</th>
                                             <th></th>
                                         </tr>

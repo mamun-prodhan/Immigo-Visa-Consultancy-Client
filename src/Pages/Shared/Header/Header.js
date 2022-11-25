@@ -4,12 +4,13 @@ import logo from '../../../assets/logo.svg'
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const menuItems = <>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
         {user?.email ?
             <>
                 <li className='font-semibold'><Link to='/myreviews'>My Reviews</Link></li>
+                <li onClick={logOut} className='font-semibold'><Link>Log Out</Link></li>
             </>
             :
             <>

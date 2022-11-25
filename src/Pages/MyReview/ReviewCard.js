@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import UpdateModal from '../UpdateModal/UpdateModal';
 
 const ReviewCard = ({myreview, handleDelete}) => {
     const {_id, service, serviceName, price, customer, photoURL, email, review} = myreview;
@@ -17,8 +18,9 @@ const ReviewCard = ({myreview, handleDelete}) => {
                 </p>
                 <div className="card-actions justify-evenly mt-2">
                     
-                        <button onClick={()=>handleDelete(_id)} className="btn btn-primary">Delete</button>
-                        <button className="btn btn-primary ml-3">Update</button>
+                        <button onClick={()=>handleDelete(_id)} className="btn btn-primary btn-sm">Delete</button>
+                        {/* <button className="btn btn-primary ml-3">Update</button> */}
+                        <UpdateModal myreview={myreview} />
                     
                 </div>
             </div>

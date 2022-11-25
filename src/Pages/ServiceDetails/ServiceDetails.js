@@ -10,13 +10,14 @@ const ServiceDetails = () => {
 
 
     // loading service review based on id
-    const [allReview, setAllReview] = useState([])
+    const [allReview, setAllReview] = useState([]);
+    const [isReload, setIsReload] = useState(true);
 
     useEffect(() => {
         fetch(`http://localhost:5000/reviews?service=${_id}`)
             .then(res => res.json())
             .then(data => setAllReview(data))
-    }, [])
+    }, [isReload])
     console.log(allReview);
 
     const handleReview = event => {
@@ -51,6 +52,7 @@ const ServiceDetails = () => {
                     alert('review added successfully');
                     form.reset();
                 }
+                setIsReload(!isReload)
             })
             .catch(err => console.error(err))
     }

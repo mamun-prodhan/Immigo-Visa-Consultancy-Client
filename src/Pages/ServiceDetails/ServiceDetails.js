@@ -2,19 +2,22 @@ import React, { useContext, useEffect, useState } from 'react';
 import { FaUser } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import Reviews from '../Reviews/Reviews';
 
 const ServiceDetails = () => {
     const { _id, title, price } = useLoaderData();
     const { user } = useContext(AuthContext);
 
+
     // loading service review based on id
-    const [allReview, setAllReview] = useState({})
+    const [allReview, setAllReview] = useState([])
 
     useEffect(() => {
         fetch(`http://localhost:5000/reviews?service=${_id}`)
             .then(res => res.json())
             .then(data => setAllReview(data))
-    }, [_id])
+    }, [])
+    console.log(allReview);
 
     const handleReview = event => {
         event.preventDefault();
@@ -104,6 +107,28 @@ const ServiceDetails = () => {
                         :
                         <>
                             <p className='text-4xl'>You have : {allReview.length} Reviews</p>
+
+                            <div className="overflow-x-auto w-full">
+                                <table className="table w-full">
+
+                                    <thead>
+                                        <tr>
+                                            <th>Customer Info</th>
+                                            <th>Services</th>
+                                            <th>Reviews</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {
+                                            allReview.map((singleReview, index) => <Reviews
+                                                key={index}
+                                                singleReview={singleReview}
+                                            ></Reviews>)
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
                         </>
                 }
             </div>

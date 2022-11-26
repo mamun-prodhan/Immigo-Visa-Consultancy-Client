@@ -7,6 +7,7 @@ const Header = () => {
     const { user, logOut } = useContext(AuthContext);
     const menuItems = <>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
+        <li className='font-semibold'><Link to='/blogs'>Blogs</Link></li>
         {user?.email ?
             <>
                 <li className='font-semibold'><Link to='/myreviews'>My Reviews</Link></li>

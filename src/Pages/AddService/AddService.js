@@ -1,4 +1,7 @@
 import React from 'react';
+// toast import
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddService = () => {
 
@@ -28,7 +31,10 @@ const AddService = () => {
         .then(data => {
             console.log(data)
             if(data.acknowledged){
-                window.alert('order Places successfully');
+                toast.success("Serivce Added Successfully", {
+                    position: "top-center",
+                    autoClose: 2000,
+                });
                 form.reset();
             }
         })
@@ -37,6 +43,7 @@ const AddService = () => {
 
     return (
         <div className='my-16'>
+            <ToastContainer />
             <h2 className='text-4xl font-bold text-center mb-3'>Add a Service</h2>
             <div  className='bg-base-100 shadow-xl rounded-xl  p-8 w-full mx-auto max-w-xs'>
             <form onSubmit={handleAddService}>

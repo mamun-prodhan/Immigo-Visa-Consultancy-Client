@@ -1,6 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import ReviewCard from './ReviewCard';
+// toast import
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const MyReview = () => {
     const { user } = useContext(AuthContext);
@@ -13,27 +16,31 @@ const MyReview = () => {
             .then(data => setMyReviews(data))
     }, [user?.email, isReload])
 
-    const handleDelete = id =>{
+    const handleDelete = id => {
         const proceed = window.confirm("Do you want to delete this review");
-        if(proceed){
-            fetch(`http://localhost:5000/myreviews/${id}`,{
+        if (proceed) {
+            fetch(`http://localhost:5000/myreviews/${id}`, {
                 method: 'DELETE'
             })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if(data.deletedCount > 0){
-                    alert('deleted successfully');
-                    const remaining = myReviews.filter(review => review._id !== id);
-                    setMyReviews(remaining);
-                }
-            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        toast.success("Deleted Successfully", {
+                            position: "top-center",
+                            autoClose: 2000,
+                        });
+                        const remaining = myReviews.filter(review => review._id !== id);
+                        setMyReviews(remaining);
+                    }
+                })
         }
     }
 
 
     return (
         <div className='my-20'>
+            <ToastContainer />
             <div className='my-12'>
                 <p className='text-center text-orange-600 font-bold text-2xl'>Reviews</p>
                 <p className='text-center text-5xl font-bold'>My All Reviews</p>

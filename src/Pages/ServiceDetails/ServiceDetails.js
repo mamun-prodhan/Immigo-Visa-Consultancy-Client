@@ -62,7 +62,7 @@ const ServiceDetails = () => {
                     setIsReload(!isReload)
                 }
                 form.reset();
-                
+
             })
             .catch(err => console.error(err))
     }

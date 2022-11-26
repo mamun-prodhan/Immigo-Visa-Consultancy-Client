@@ -72,7 +72,7 @@ const ServiceDetails = () => {
                 <ToastContainer />
                 <div className="hero-content text-center">
                     <div className="">
-                        <img className='rounded-xl  mx-auto' src={img} alt="" />
+                        <img className='rounded-xl  mx-auto' src={img} alt="UserImage" />
                         <h1 className="text-5xl font-bold mt-5">Service Name: {title}</h1>
                         <p className='text-3xl font-bold mt-5 text-orange-600'>Price: {price}</p>
                         <p className="py-6 text-justify">{description}</p>

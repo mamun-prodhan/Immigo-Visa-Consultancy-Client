@@ -15,6 +15,7 @@ const AddService = () => {
 
         const addService = {
             title: title,
+            insertDate: new Date(),
             img: img,
             price: price,
             description: description

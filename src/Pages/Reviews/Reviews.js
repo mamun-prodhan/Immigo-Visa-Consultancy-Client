@@ -1,8 +1,8 @@
 import { current } from 'daisyui/src/colors';
 import React from 'react';
 
-const Reviews = ({singleReview}) => {
-    const {serviceName, price, customer, photoURL, email, review} = singleReview;
+const Reviews = ({ singleReview }) => {
+    const { serviceName, price, customer, photoURL, email, review } = singleReview;
     return (
         <tr>
             <td>

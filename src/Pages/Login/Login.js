@@ -13,6 +13,7 @@ const Login = () => {
 
     const from = location.state?.from?.pathname || '/';
 
+
     const googleProvider = new GoogleAuthProvider();
 
     const handleGoogleSignIn = () => {
@@ -20,10 +21,11 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, {replace: true});
             })
-            .catch(err => {
-                console.error(err);
-                setError(err.message);
+            .catch(error => {
+                console.error(error);
+                setError(error.message);
             })
     }
 
@@ -37,8 +39,14 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                form.reset();
+                setError('');
+                navigate(from, {replace: true});
             })
-            .then(error => console.log(error));
+            .catch(error => {
+                console.error(error);
+                setError(error.message);
+            })
     }
 
     return (
@@ -63,7 +71,7 @@ const Login = () => {
                             <input type="text" name='password' placeholder="password" className="input input-bordered" />
                         </div>
                         <div className="form-control mt-6">
-                            <p>{error}</p>
+                            <p className='text-red-600'>{error}</p>
                             <input className="btn btn-outline" type="submit" value="Login" />
                         </div>
                         <div className="form-control mt-6">

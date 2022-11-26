@@ -80,7 +80,7 @@ const UpdateModal = ({ myreview, isReload, setIsReload }) => {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <button onClick={closeModal} className="btn btn-sm btn-warning ml-3">
+        <button onClick={closeModal} className="btn btn-primary btn-sm ml-3">
           close
         </button>
         <div className='p-3 '>Update Your Review</div>
@@ -118,7 +118,7 @@ const UpdateModal = ({ myreview, isReload, setIsReload }) => {
               ></textarea>
             </div>
             <div className="mt-4">
-              <input type="submit" value="submit" className="btn btn-info" />
+              <input type="submit" value="Update" className="btn btn-primary" />
             </div>
           </form>
         </div>

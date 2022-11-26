@@ -20,6 +20,7 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                setError('');
                 form.reset();
                 handleUpdateUserProfile(name, photoURL);
             })
@@ -76,7 +77,7 @@ const SignUp = () => {
                             <input type="text" name='password' placeholder="password" className="input input-bordered" required />
                         </div>
                         <div className="form-control mt-6">
-                            <p>{error}</p>
+                            <p className='text-red-600'>{error}</p>
                             <input className="btn btn-primary" type="submit" value="Sign Up" />
                         </div>
                     </form>

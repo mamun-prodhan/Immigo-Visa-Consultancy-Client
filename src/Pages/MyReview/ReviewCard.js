@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import UpdateModal from '../UpdateModal/UpdateModal';
 
-const ReviewCard = ({myreview, handleDelete}) => {
+const ReviewCard = ({myreview,setIsReload, isReload, handleDelete}) => {
     const {_id, service, serviceName, price, customer, photoURL, email, review} = myreview;
 
     
@@ -20,7 +20,11 @@ const ReviewCard = ({myreview, handleDelete}) => {
                     
                         <button onClick={()=>handleDelete(_id)} className="btn btn-primary btn-sm">Delete</button>
                         {/* <button className="btn btn-primary ml-3">Update</button> */}
-                        <UpdateModal myreview={myreview} />
+                        <UpdateModal 
+                        myreview={myreview}
+                        setIsReload={setIsReload}
+                        isReload={isReload}
+                        />
                     
                 </div>
             </div>

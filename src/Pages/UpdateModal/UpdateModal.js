@@ -15,7 +15,7 @@ const customStyles = {
 
 Modal.setAppElement("#root");
 
-const UpdateModal = ({myreview}) => {
+const UpdateModal = ({myreview, isReload, setIsReload}) => {
     const {_id, service, serviceName, price, customer, photoURL, email, review} = myreview;
     console.log(_id)
     let subtitle;
@@ -51,7 +51,7 @@ const UpdateModal = ({myreview}) => {
         .then((res) => res.json())
         .then((data) => {
             console.log(data);
-            // setIsReload(!isReload)
+            setIsReload(!isReload)
         })
 
         console.log(customer, email, review);

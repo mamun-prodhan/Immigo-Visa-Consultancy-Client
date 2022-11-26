@@ -5,12 +5,13 @@ import ReviewCard from './ReviewCard';
 const MyReview = () => {
     const { user } = useContext(AuthContext);
     const [myReviews, setMyReviews] = useState([]);
+    const [isReload, setIsReload] = useState(true);
 
     useEffect(() => {
         fetch(`http://localhost:5000/myreviews?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setMyReviews(data))
-    }, [user?.email])
+    }, [user?.email, isReload])
 
     const handleDelete = id =>{
         const proceed = window.confirm("Do you want to delete this review");
@@ -48,6 +49,9 @@ const MyReview = () => {
                                     key={myreview._id}
                                     myreview={myreview}
                                     handleDelete={handleDelete}
+                                    isReload={isReload}
+                                    setIsReload={setIsReload}
+
                                 ></ReviewCard>)
                             }
                         </div>

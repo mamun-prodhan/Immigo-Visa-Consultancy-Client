@@ -1,63 +1,74 @@
 import React from 'react';
-
 import Modal from "react-modal";
+// toast import
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const customStyles = {
-    content: {
-        top: "50%",
-        left: "50%",
-        right: "auto",
-        bottom: "auto",
-        marginRight: "-50%",
-        transform: "translate(-50%, -50%)",
-    },
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
 };
 
 Modal.setAppElement("#root");
 
-const UpdateModal = ({myreview, isReload, setIsReload}) => {
-    const {_id, service, serviceName, price, customer, photoURL, email, review} = myreview;
-    console.log(_id)
-    let subtitle;
-    const [modalIsOpen, setIsOpen] = React.useState(false);
+const UpdateModal = ({ myreview, isReload, setIsReload }) => {
+  const { _id, service, serviceName, price, customer, photoURL, email, review } = myreview;
+  console.log(_id)
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
 
-    function openModal() {
-        setIsOpen(true);
-    }
+  function openModal() {
+    setIsOpen(true);
+  }
 
-    function afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        // subtitle.style.color = "#f00";
-    }
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    // subtitle.style.color = "#f00";
+  }
 
-    function closeModal() {
-        setIsOpen(false);
-    }
+  function closeModal() {
+    setIsOpen(false);
+  }
 
-    const handleUpdate = (event) =>{
-        event.preventDefault();
-        const form = event.target;
-        const customer = form.name.value;
-        const email = form.email.value;
-        const review = form.review.value;
+  const handleUpdate = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const customer = form.name.value;
+    const email = form.email.value;
+    const review = form.review.value;
 
-        fetch(`http://localhost:5000/myreviews/${_id}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({customer, email, review}),
-        })
-        .then((res) => res.json())
-        .then((data) => {
-            console.log(data);
-            setIsReload(!isReload)
-        })
+    fetch(`http://localhost:5000/myreviews/${_id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ customer, email, review }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          toast.success("Updated Successfully", {
+            position: "top-center",
+            autoClose: 2000,
+          });
+          setIsReload(!isReload)
+        }
+        form.reset();
 
-        console.log(customer, email, review);
-    }
-    return (
-        <div>
+      })
+
+    console.log(customer, email, review);
+  }
+  return (
+    <div>
+      <ToastContainer />
       <button onClick={openModal} className="btn btn-primary btn-sm">
         {" "}
         Update
@@ -113,7 +124,7 @@ const UpdateModal = ({myreview, isReload, setIsReload}) => {
         </div>
       </Modal>
     </div>
-    );
+  );
 };
 
 export default UpdateModal;

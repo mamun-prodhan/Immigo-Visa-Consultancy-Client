@@ -3,6 +3,9 @@ import { FaUser } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import Reviews from '../Reviews/Reviews';
+// toast import
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ServiceDetails = () => {
     const { _id, title, price, img, description } = useLoaderData();
@@ -30,6 +33,7 @@ const ServiceDetails = () => {
 
         const serviceReview = {
             service: _id,
+            insertDate: new Date(),
             serviceName: title,
             price,
             customer: name,
@@ -49,10 +53,14 @@ const ServiceDetails = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    alert('review added successfully');
-                    form.reset();
+                    toast.success("Review Added Successfully", {
+                        position: "top-center",
+                        autoClose: 2000,
+                    });
+                    setIsReload(!isReload)
                 }
-                setIsReload(!isReload)
+                form.reset();
+                
             })
             .catch(err => console.error(err))
     }
@@ -61,6 +69,7 @@ const ServiceDetails = () => {
         <div>
             {/* service details section */}
             <div className="hero bg-base-200 rounded-xl">
+                <ToastContainer />
                 <div className="hero-content text-center">
                     <div className="">
                         <img className='rounded-xl  mx-auto' src={img} alt="" />
@@ -93,7 +102,7 @@ const ServiceDetails = () => {
                                 </div>
                                 <form onSubmit={handleReview} className='bg-base-100 shadow-xl w-1/2 mx-auto p-5 rounded-xl'>
                                     <label className='font-bold' htmlFor="name">Name</label><br />
-                                    <input name="name" type="text" placeholder="Your Name" defaultValue={user?.displayName} className="mb-5 input input-bordered input-success w-full max-w-xs" required/> <br />
+                                    <input name="name" type="text" placeholder="Your Name" defaultValue={user?.displayName} className="mb-5 input input-bordered input-success w-full max-w-xs" required /> <br />
                                     <label className='font-bold' htmlFor="photoURL">photoURL</label><br />
                                     <input name="photoURL" type="text" placeholder="photoURL" defaultValue={user?.photoURL} className="mb-5 input input-bordered input-success w-full max-w-xs" required /> <br />
                                     <label className='font-bold' htmlFor="email">Email</label><br />

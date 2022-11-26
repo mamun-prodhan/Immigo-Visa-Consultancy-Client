@@ -4,11 +4,13 @@ import ReviewCard from './ReviewCard';
 // toast import
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../../hooks/useTitle';
 
 const MyReview = () => {
     const { user } = useContext(AuthContext);
     const [myReviews, setMyReviews] = useState([]);
     const [isReload, setIsReload] = useState(true);
+    useTitle('My Review');
 
     useEffect(() => {
         fetch(`http://localhost:5000/myreviews?email=${user?.email}`)

@@ -6,10 +6,12 @@ import Reviews from '../Reviews/Reviews';
 // toast import
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../../hooks/useTitle';
 
 const ServiceDetails = () => {
     const { _id, title, price, img, description } = useLoaderData();
     const { user } = useContext(AuthContext);
+    useTitle('Service Details')
 
 
     // loading service review based on id

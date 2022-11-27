@@ -7,16 +7,27 @@ import 'react-toastify/dist/ReactToastify.css';
 import useTitle from '../../hooks/useTitle';
 
 const MyReview = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const [myReviews, setMyReviews] = useState([]);
     const [isReload, setIsReload] = useState(true);
     useTitle('My Review');
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myreviews?email=${user?.email}`)
-            .then(res => res.json())
-            .then(data => setMyReviews(data))
-    }, [user?.email, isReload])
+        fetch(`http://localhost:5000/myreviews?email=${user?.email}`, {
+            headers:{
+                authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        })
+            .then(res => {
+                if(res.status === 401 || res.status === 403){
+                   return logOut();
+                }
+              return  res.json();
+            })
+            .then(data => {
+                setMyReviews(data);
+            })
+    }, [user?.email, isReload, logOut])
 
     const handleDelete = id => {
         const proceed = window.confirm("Do you want to delete this review");
@@ -26,7 +37,6 @@ const MyReview = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
                     if (data.deletedCount > 0) {
                         toast.success("Deleted Successfully", {
                             position: "top-center",
@@ -49,7 +59,7 @@ const MyReview = () => {
             </div>
             {
                 myReviews.length === 0 ?
-                    <p className='text-4xl font-bold text-center'>You have No Reviews</p>
+                    <p className='text-4xl font-bold text-red-600 text-center my-20'>You have No Reviews</p>
                     :
                     <>
                         <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>

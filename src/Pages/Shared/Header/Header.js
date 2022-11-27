@@ -15,12 +15,12 @@ const Header = () => {
     const menuItems = <>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
         <li className='font-semibold'><Link to='/blogs'>Blogs</Link></li>
-        <li className='font-semibold'><Link to='/addservice'>Add Service</Link></li>
-        <li className='font-semibold'><Link to='/myreviews'>My Reviews</Link></li>
+
         {user?.email ?
             <>
 
-
+                <li className='font-semibold'><Link to='/addservice'>Add Service</Link></li>
+                <li className='font-semibold'><Link to='/myreviews'>My Reviews</Link></li>
                 <li onClick={handleLogOut} className='font-semibold'><Link>Log Out</Link></li>
             </>
             :

@@ -19,7 +19,7 @@ Modal.setAppElement("#root");
 
 const UpdateModal = ({ myreview, isReload, setIsReload }) => {
   const { _id, service, serviceName, price, customer, photoURL, email, review } = myreview;
-  console.log(_id)
+
   let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -52,7 +52,7 @@ const UpdateModal = ({ myreview, isReload, setIsReload }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+
         if (data.modifiedCount > 0) {
           toast.success("Updated Successfully", {
             position: "top-center",
@@ -64,7 +64,6 @@ const UpdateModal = ({ myreview, isReload, setIsReload }) => {
 
       })
 
-    console.log(customer, email, review);
   }
   return (
     <div>

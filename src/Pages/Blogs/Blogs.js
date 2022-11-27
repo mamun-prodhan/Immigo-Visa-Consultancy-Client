@@ -8,7 +8,7 @@ const Blogs = () => {
             <div className="bg-base-200 rounded-xl p-10 my-10">
                 <div className="">
                     <h1 className="text-3xl font-bold mt-5">What is the difference Between SQL and NoSQL ?</h1>
-                    <p className="py-6">
+                    <h2 className="py-6">
                         The difference between SQL and NoSQL are: <br /> <br />
                         <span className='font-bold'>SQL:</span> <br />
                         <ol>
@@ -53,14 +53,14 @@ const Blogs = () => {
                             </li>
                         </ol>
 
-                    </p>
+                    </h2>
 
                 </div>
             </div>
             <div className="bg-base-200 rounded-xl p-10 my-10">
                 <div className="">
                     <h1 className="text-3xl font-bold mt-5">What is the difference Between JavaScript and NodeJS ?</h1>
-                    <p className="py-6">
+                    <h2 className="py-6">
                         The difference between JavaScript and NodeJS are: <br /> <br />
                         <span className='font-bold'>JavaScript:</span> <br />
                         <ol>
@@ -104,23 +104,23 @@ const Blogs = () => {
                                 6. Nodejs is used in server-side development.
                             </li>
                         </ol>
-                    </p>
+                    </h2>
                 </div>
             </div>
             <div className="bg-base-200 rounded-xl p-10 my-10">
                 <div className="">
                     <h1 className="text-3xl font-bold mt-5">What is JWT and how does it work ?</h1>
-                    <p className="py-6">
+                    <h2 className="py-6">
                         <span className='font-bold'>JWT</span>, or JSON Web Token, is an open standard used to share security information between two parties — a client and a server. Each JWT contains encoded JSON objects, including a set of claims. JWTs are signed using a cryptographic algorithm to ensure that the claims cannot be altered after the token is issued. <br /> JWTs differ from other web tokens in that they contain a set of claims. Claims are used to transmit information between two parties. What these claims are depends on the use case at hand. For example, a claim may assert who issued the token, how long it is valid for, or what permissions the client has been granted.
-                    </p>
+                    </h2>
                 </div>
             </div>
             <div className="bg-base-200 rounded-xl p-10 my-10">
                 <div className="">
                     <h1 className="text-3xl font-bold mt-5">How does NodeJS handle multiple requests at the same time ?</h1>
-                    <p className="py-6">
+                    <h2 className="py-6">
                         NodeJS receives multiple client requests and places them into <span className='font-bold'>EventQueue</span>. NodeJS is built with the concept of event-driven architecture. NodeJS has its own EventLoop which is an infinite loop that receives requests and processes them. <span className='font-bold'>EventLoop</span> is the listener for the EventQueue. <br />If NodeJS can process the request without I/O blocking then the event loop would itself process the request and sends the response back to the client by itself. But, it is possible to process multiple requests parallelly using the NodeJS cluster module or worker_threads module.
-                    </p>
+                    </h2>
                 </div>
             </div>
 

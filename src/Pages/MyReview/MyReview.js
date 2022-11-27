@@ -59,7 +59,7 @@ const MyReview = () => {
             </div>
             {
                 myReviews.length === 0 ?
-                    <p className='text-4xl font-bold text-red-600 text-center my-20'>You have No Reviews</p>
+                    <p className='text-4xl font-bold text-red-600 text-center my-20'>No reviews were added</p>
                     :
                     <>
                         <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>

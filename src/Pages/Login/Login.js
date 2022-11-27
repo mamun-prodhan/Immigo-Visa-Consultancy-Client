@@ -25,7 +25,6 @@ const Login = () => {
                 const currentUser = {
                     email: user.email
                 }
-                console.log(currentUser);
                 setError('');
                 // get jwt token
                 fetch('http://localhost:5000/jwt', {
@@ -37,7 +36,6 @@ const Login = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
                         // set jwt in local storage
                         localStorage.setItem('token', data.token);
                         navigate(from, { replace: true });
@@ -62,7 +60,6 @@ const Login = () => {
                 const currentUser = {
                     email: user.email
                 }
-                console.log(currentUser);
 
                 form.reset();
                 setError('');
@@ -76,7 +73,6 @@ const Login = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
                         // set jwt in local storage
                         localStorage.setItem('token', data.token);
                         navigate(from, { replace: true });

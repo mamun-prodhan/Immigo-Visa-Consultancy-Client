@@ -33,7 +33,6 @@ const AddService = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data.acknowledged) {
                     toast.success("Serivce Added Successfully", {
                         position: "top-center",

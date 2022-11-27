@@ -23,7 +23,7 @@ const ServiceDetails = () => {
             .then(res => res.json())
             .then(data => setAllReview(data))
     }, [isReload])
-    console.log(allReview);
+
 
     const handleReview = event => {
         event.preventDefault();
@@ -53,7 +53,7 @@ const ServiceDetails = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+ 
                 if (data.acknowledged) {
                     toast.success("Review Added Successfully", {
                         position: "top-center",

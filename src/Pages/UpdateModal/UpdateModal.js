@@ -43,7 +43,7 @@ const UpdateModal = ({ myreview, isReload, setIsReload }) => {
     const email = form.email.value;
     const review = form.review.value;
 
-    fetch(`http://localhost:5000/myreviews/${_id}`, {
+    fetch(`https://assignment-11-server-green-chi.vercel.app/myreviews/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

@@ -19,7 +19,7 @@ const ServiceDetails = () => {
     const [isReload, setIsReload] = useState(true);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?service=${_id}`)
+        fetch(`https://assignment-11-server-green-chi.vercel.app/reviews?service=${_id}`)
             .then(res => res.json())
             .then(data => setAllReview(data))
     }, [isReload])
@@ -44,7 +44,7 @@ const ServiceDetails = () => {
             review
         }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://assignment-11-server-green-chi.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

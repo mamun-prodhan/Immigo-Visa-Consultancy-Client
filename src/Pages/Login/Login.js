@@ -23,6 +23,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                setError('');
                 navigate(from, { replace: true });
             })
             .catch(error => {
@@ -45,10 +46,10 @@ const Login = () => {
                 setError('');
                 navigate(from, { replace: true });
             })
-            .catch(error => {
-                console.error(error);
-                setError(error.message);
-            })
+            .catch((err) => {
+                console.error(err);
+                setError(err.message);
+            });
     }
 
     return (

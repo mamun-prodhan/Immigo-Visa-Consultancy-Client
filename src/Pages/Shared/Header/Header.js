@@ -10,7 +10,7 @@ const Header = () => {
         logOut()
             .then(() => { })
             .catch(err => console.error(err))
-    }
+    };
 
     const menuItems = <>
         <li className='font-semibold'><Link to='/'>Home</Link></li>

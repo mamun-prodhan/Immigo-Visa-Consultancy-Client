@@ -23,7 +23,7 @@ const About = () => {
                         <div>
                             <img src={image1} alt="" />
                         </div>
-                        <div  className='ml-4'>
+                        <div  className='md:ml-4 mt-4 md:mt-0'>
                             <h4 className='text-orange-600 font-bold text-2xl'>My Mission</h4>
                             <p>Visa Consultancy is one of the leading companies supporting applicants for Immigration, Tourist Visa, Medical Tourism and expanding into student visa support.</p>
                         </div>
@@ -32,7 +32,7 @@ const About = () => {
                         <div>
                             <img src={image2} alt="" />
                         </div>
-                        <div  className='ml-4'>
+                        <div  className='md:ml-4 mt-4 md:mt-0'>
                             <h4 className='text-orange-600 font-bold text-2xl'>My Strategy</h4>
                             <p>IMMIGO Visa Consultancy is one of the leading companies supporting applicants for Immigration, Tourist Visa, Medical Tourism and expanding into student visa support.</p>
                         </div>

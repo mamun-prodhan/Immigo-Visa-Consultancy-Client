@@ -3,8 +3,8 @@ import React from 'react';
 const CountryCard = ({contry}) => {
     const {img, title, description} = contry
     return (
-        <div className="card card-side bg-base-100 shadow-xl">
-            <figure><img src={img} className="rounded-xl" alt="Movie" /></figure>
+        <div className="card lg:card-side bg-base-100 shadow-xl">
+            <figure><img src={img} className="md:rounded-xl" alt="Movie" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{title}</h2>
                 <p>{description}</p>

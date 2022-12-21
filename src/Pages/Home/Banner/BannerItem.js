@@ -14,10 +14,12 @@ const BannerItem = ({slide}) => {
                         Visa Consultancy
                     </h1>
                 </div>
-                <div className="absolute flex justify-end transform -translate-y-1/2 w-2/5 left-24 top-1/2">
+                <div className="absolute flex justify-end transform -translate-y-1/2 w-2/5 left-10 md:left-24 top-1/2">
                     <p className='text-xl text-white hidden lg:block'>IMMIGO Consultants is one of the best and leading Student Visa Consultancy Firm in Bangladesh offers comprehensive educational services to students who have strong desire and intention of studying in internationally well reputed institutions in the UK, Canada, USA, Australia, and Malaysia.</p>
+                    <p className='text-xl hidden md:block lg:hidden text-white'>IMMIGO Consultants is one of the best and leading Student Visa Consultancy Firm in Bangladesh.</p>
+                    <p className='block md:hidden text-white mt-4 md:mt-0'>The best Consultancy Firm in Bangladesh.</p>
                 </div>
-                <div className="absolute flex justify-start transform -translate-y-1/2 w-2/5 left-10 md:left-24 md:top-3/4 top-2/3">
+                <div className="absolute flex justify-start transform -translate-y-1/2 w-2/5 left-10 md:left-24 md:top-3/4 top-3/4">
                     <button className="btn btn-warning mr-5 btn-xs sm:btn-sm md:btn-md lg:btn-lg">Consult Now</button>
                     <button className="btn btn-outline btn-warning btn-xs sm:btn-sm md:btn-md lg:btn-lg">More Info</button>
                 </div>

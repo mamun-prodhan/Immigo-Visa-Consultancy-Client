@@ -9,9 +9,9 @@ const Country = () => {
         .then(data => setCountry(data))
     }, [])
     return (
-        <div className='my-20'>
+        <div className='my-20 p-4 md:p-0'>
             <div className='my-8'>
-                <p className='text-center text-orange-600 font-bold text-2xl'>Popular Country</p>
+                <p className='text-center text-orange-600 font-bold text-2xl mb-4'>Popular Country</p>
                 <p className='text-center text-5xl font-bold'>Immigration Country</p>
             </div>
             <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>

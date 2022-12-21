@@ -8,7 +8,7 @@ import image4 from '../../../assets/about/text.JPG';
 const About = () => {
     return (
         <div className="hero bg-base-200 my-20">
-            <div className="hero-content flex-col lg:flex-row-reverse p-14">
+            <div className="hero-content flex-col lg:flex-row-reverse p-6 lg:p-14">
                 <div className='w-1/2  relative'>
                     <img src={image3} alt="" className="rounded-lg shadow-2xl" />
                     <img src={image4} alt="" className="absolute left-16 top-3/4 rounded-lg shadow-2xl" />
@@ -19,7 +19,7 @@ const About = () => {
                     <h1 className="text-5xl font-bold  my-5">Experienced Visa <br />Consultant</h1>
                     <p className="">IMMIGO Visa Consultancy is one of the leading companies supporting applicants for Immigration, Tourist Visa, Medical Tourism and expanding into student visa support. With locations in Bangladesh, Thailand, Singapore, UK and Australia, we are well equipped with lawyers who would help you in pursuit of your immigration.</p>
 
-                    <div className='flex py-6 items-center justify-center'>
+                    <div className='md:flex py-6 items-center justify-center'>
                         <div>
                             <img src={image1} alt="" />
                         </div>
@@ -28,7 +28,7 @@ const About = () => {
                             <p>Visa Consultancy is one of the leading companies supporting applicants for Immigration, Tourist Visa, Medical Tourism and expanding into student visa support.</p>
                         </div>
                     </div>
-                    <div className='flex py-6 items-center justify-center'>
+                    <div className='md:flex py-6 items-center justify-center'>
                         <div>
                             <img src={image2} alt="" />
                         </div>

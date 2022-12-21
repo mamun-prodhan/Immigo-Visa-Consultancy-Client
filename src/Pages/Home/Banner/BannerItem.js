@@ -8,22 +8,22 @@ const BannerItem = ({slide}) => {
                 <div className='carousel-img'>
                     <img src={image} alt="" className="w-full rounded-xl" />
                 </div>
-                <div className="absolute flex justify-end transform -translate-y-1/2 left-24 top-1/4">
-                    <h1 className='text-6xl font-bold text-white'>
+                <div className="absolute flex justify-end transform -translate-y-1/2 left-10 md:left-24 top-1/4">
+                    <h1 className='text-3xl md:text-6xl font-bold text-white'>
                         IMMIGO<br />
                         Visa Consultancy
                     </h1>
                 </div>
                 <div className="absolute flex justify-end transform -translate-y-1/2 w-2/5 left-24 top-1/2">
-                    <p className='text-xl text-white'>IMMIGO Consultants is one of the best and leading Student Visa Consultancy Firm in Bangladesh offers comprehensive educational services to students who have strong desire and intention of studying in internationally well reputed institutions in the UK, Canada, USA, Australia, and Malaysia.</p>
+                    <p className='text-xl text-white hidden lg:block'>IMMIGO Consultants is one of the best and leading Student Visa Consultancy Firm in Bangladesh offers comprehensive educational services to students who have strong desire and intention of studying in internationally well reputed institutions in the UK, Canada, USA, Australia, and Malaysia.</p>
                 </div>
-                <div className="absolute flex justify-start transform -translate-y-1/2 w-2/5 left-24 top-3/4">
-                    <button className="btn btn-warning mr-5">Consult Now</button>
-                    <button className="btn btn-outline btn-warning">More Info</button>
+                <div className="absolute flex justify-start transform -translate-y-1/2 w-2/5 left-10 md:left-24 md:top-3/4 top-2/3">
+                    <button className="btn btn-warning mr-5 btn-xs sm:btn-sm md:btn-md lg:btn-lg">Consult Now</button>
+                    <button className="btn btn-outline btn-warning btn-xs sm:btn-sm md:btn-md lg:btn-lg">More Info</button>
                 </div>
                 <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
-                    <a href={`#slide${prev}`} className="btn btn-circle mr-5">❮</a>
-                    <a href={`#slide${next}`} className="btn btn-circle">❯</a>
+                    <a href={`#slide${prev}`} className="btn btn-circle btn-xs sm:btn-sm md:btn-md lg:btn-lg mr-5">❮</a>
+                    <a href={`#slide${next}`} className="btn btn-circle btn-xs sm:btn-sm md:btn-md lg:btn-lg">❯</a>
                 </div>
             </div>
     );
